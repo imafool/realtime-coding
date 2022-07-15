@@ -1,0 +1,28 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 921112
+
+# 添加Eureka Client配置
+eureka:
+  instance:
+    instance-id: payment8001 #规范名称显示
+    prefer-ip-address: true #鼠标覆盖显示IP
+  client:
+    register-with-eureka: true #是否注册到Eureka Server
+    fetch-registry: true #是否去Eureka Server抓取注册信息，多节点实现负载均衡
+    service-url:
+      defaultZone: http://localhost:7001/eureka #Eureka Server地址
+#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #Eureka Server集群环境
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.coco.entities

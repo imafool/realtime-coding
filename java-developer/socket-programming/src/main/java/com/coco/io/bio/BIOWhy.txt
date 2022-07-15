@@ -1,0 +1,23 @@
+关键点：accept()、read()方法会被阻塞~
+---------------------------------------------------------------------
+1. accept()
+Listens for a connection to be made to this socket and accepts it.
+The method blocks until a connection is made.
+
+/* Native methods */
+static native void initIDs();
+static native int socket0(boolean stream, boolean v6Only) throws IOException;
+static native void bind0(int fd, InetAddress localAddress, int localport, boolean exclBind) throws IOException;
+static native int connect0(int fd, InetAddress remote, int remotePort) throws IOException;
+
+需要操作系统级别的同步IO，如果OS没有发现有套接字从指定端口来，那么操作系统就会等待，
+                        然后serverSocket.accept()方法就会一直等待，所以就阻塞了。
+
+
+几个概念：
+阻塞IO和非阻塞IO：
+    是程序级别的，主要描述程序请求操作系统IO，看资源是否准备好的行为。
+    前者等待；后者继续执行（并且使用线程一直轮询，直到有IO资源准备好了）。
+同步IO和非同步IO：
+    是操作系统级别的，是OS在收到程序的IO请求之后，自身资源是否准备好，采取的响应行为。
+    前者不响应，直到IO资源准备好以后；后者返回一个标记，当IO资源准备好以后，再用事件机制返回给程序。

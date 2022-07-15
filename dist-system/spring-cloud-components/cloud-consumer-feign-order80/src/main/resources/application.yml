@@ -1,0 +1,28 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: order-consumer-openfeign-service
+
+# 添加Eureka Client配置
+eureka:
+  instance:
+    instance-id: openfeignOrder80
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true #是否注册到Eureka Server
+    fetch-registry: true #是否去Eureka Server抓取注册信息，多节点实现负载均衡
+    service-url:
+            defaultZone: http://localhost:7001/eureka #Eureka Server地址
+#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #Eureka Server集群环境
+
+# 配置读取超时时间5000ms，默认1s
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+# openfeign日志级别：DEBUG
+logging:
+  level:
+    com.coco.service.PaymentFeignService: debug

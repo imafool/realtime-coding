@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  redis:
+    host: 192.168.56.102
+    port: 6379
+    password: 123456
+    timeout: 10000
+    lettuce:
+      pool:
+        max-active: 20 #最大连接数
+        max-wait: -1 #最大阻塞时间
+        max-idle: 5 #最大空闲数
+        min-idle: 0 #最小空闲数

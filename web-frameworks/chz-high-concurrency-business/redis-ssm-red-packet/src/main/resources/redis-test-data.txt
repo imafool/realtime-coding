@@ -1,0 +1,2 @@
+hset red_packet_1 stock 20000
+hset red_packet_1 unit_amount 10

@@ -1,0 +1,34 @@
+Stream Type:
+> Byte（二进制）/Character（文本）
+> Input/Output
+> Node/Handle(Package)
+
+Abstract Class: InputStream、Reader、OutputStream，Writer
+
+(节点流，和数据源相关，直接操作数据源，效率 ↓)
+Access File：FileInputStream、FileReader、FileOutputStream、FileWriter
+
+Access Array: ByteArrayInputStream、ByteArrayReader、ByteArrayOutputStream、ByteArrayWriter
+
+Access Pipeline: PipedInputStream、PipedReader、PipedOutputStream、PipedWriter
+
+
+//-------------
+（处理流-对上述节点流进行的封装处理，消除不同节点流的实现差异），主要使用增加缓冲提升效率
+Switch Stream: InputStreamReader、OutputStreamWriter
+
+Buffer Stream: BufferedInputStream、BufferedReader、BufferedOutputStream、BufferedWriter
+
+Object Stream: ObjectInputStream、ObjectOutputStream
+
+Print Stream: PrintStream、PrintWriter
+
+Data Stream: DataInputStream、DataOutputStream
+
+序列化问题：
+读写顺序一致；实现可序列化接口；建议添加serialVersionUID（序列化版本号，可以提高兼容性）；static/transient修饰属性不会序列化；属性的类型也要实现序列化接口；
+
+字节流和字符流的转化{
+    对字节流指定编码！
+}
+

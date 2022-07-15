@@ -1,0 +1,31 @@
+# C/CPP
+*.dev
+*.exe
+*.layout
+*.out
+*.o
+*.win
+
+.idea
+target/
+
+# JAVA
+.idea/
+.git/
+*.iml
+target/
+test/
+127.0.0.1_*.txt
+/com/coco/test
+
+# FRAMES
+.idea/
+.git/
+*.iml
+target/
+test/
+.mvn/
+HELP.md
+mvnw
+mvnw.cmd
+webroot

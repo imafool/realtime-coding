@@ -1,0 +1,28 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumer-feign-hystrix-service
+  main:
+    allow-bean-definition-overriding: true
+# 添加Eureka Client配置
+eureka:
+  instance:
+    instance-id: feignHystrix80
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka #Eureka Server地址
+#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #Eureka Server集群环境
+
+# 配置读取超时时间5000ms，默认1s
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+feign:
+  hystrix:
+    enabled: true

@@ -1,0 +1,18 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: order-consumer-service
+
+# 添加Eureka Client配置
+eureka:
+  instance:
+    instance-id: order80
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true #是否注册到Eureka Server
+    fetch-registry: true #是否去Eureka Server抓取注册信息，多节点实现负载均衡
+    service-url:
+#      defaultZone: http://localhost:7001/eureka #Eureka Server地址
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #Eureka Server集群环境

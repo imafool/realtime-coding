@@ -1,0 +1,22 @@
+server:
+  port: 7002
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  instance:
+    hostname: eureka7002.com
+    instance-id: server7002
+    prefer-ip-address: true
+  #    hostname: localhost # Eureka Server 实例名
+#  client:
+#    register-with-eureka: true # 是否将自己注册进 Server
+#    fetch-registry: true # 表示自己就是注册中心
+#    service-url:
+#      defaultZone: http://eureka7001.com:7001/eureka
+#    register-with-eureka: false # 是否将自己注册进 Server
+#    fetch-registry: false # 表示自己就是注册中心
+#    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 与 Eureka Server 交互的微服务需要这个地址
