@@ -1,6 +1,6 @@
 package com.dps.proxy;
 
-import com.lean.ssm.chapter2.reflect.ReflectServiceImpl;
+import com.dps.reflect.ReflectServiceImpl;
 
 public class ProxyTest {
 

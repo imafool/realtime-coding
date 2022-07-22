@@ -1,6 +1,6 @@
 package com.dps.factory.abs;
 
-import com.lean.ssm.chapter2.factory.products.Product3;
+import com.dps.factory.products.Product3;
 
 /**
  * 具体工厂2生产产品3

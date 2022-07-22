@@ -5,6 +5,12 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * This class represents an observable object, or "data"
+ * in the model-view paradigm. It can be subclassed to represent an
+ * object that the application wants to have observed.
+ * 可被观察的对象（封装对象）
+ */
 public class ProductList extends Observable {
     
     private List<String> productList = null;//产品列表

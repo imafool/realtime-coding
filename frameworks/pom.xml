@@ -6,7 +6,6 @@
 
     <artifactId>frameworks</artifactId>
     <modules>
-        <module>chb-design-patterns</module>
         <module>chz-high-concurrency-business</module>
         <module>easy-poi</module>
         <module>mybatis</module>
